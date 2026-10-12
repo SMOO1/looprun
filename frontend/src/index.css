@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-ink: #17191c;
+  --color-muted: #6b7078;
+  --color-line: #e4e5e7;
+  --color-wash: #f5f5f4;
+  --color-track: #f04e23;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+/* Leaflet */
+.leaflet-container {
+  background: #eceae6;
+  font-family: inherit;
+}
+
+.leaflet-container.picking {
+  cursor: crosshair;
+}
+
+.leaflet-control-attribution {
+  background: rgb(255 255 255 / 0.8) !important;
+  color: var(--color-muted);
+  font-size: 10px;
+}
+
+.leaflet-bar {
+  border: 1px solid var(--color-line) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
+  overflow: hidden;
+}
+
+.leaflet-bar a {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-line);
+}
+
+.start-marker {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--color-ink);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.15), 0 2px 6px rgb(0 0 0 / 0.25);
+}
+
+.km-marker {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 1.5px solid var(--color-track);
+  color: var(--color-ink);
+  font-size: 10px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+input[type='range'] {
+  accent-color: var(--color-ink);
+}
+
+/* Hide number spinners; the slider and presets do that job. */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

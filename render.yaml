@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: looprun-api
+    runtime: docker
+    plan: free
+    rootDir: backend
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://smoo1.github.io
